@@ -1,0 +1,14 @@
+from typing import List
+
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        di = {}
+        for i in range(len(nums)):
+            # Если нужное дополнение не найдено, добавляем элемент в словарь
+            if (target - nums[i]) not in di:
+                di[nums[i]] = i
+            else:
+                # Возвращаем индекс найденного элемента и текущий индекс
+                return [di[target - nums[i]], i]
+        return []  # Если не нашли решение
+
